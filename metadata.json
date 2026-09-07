@@ -1,0 +1,6 @@
+{
+  "name": "Nexgile WealthAgent",
+  "description": "Institutional wealth management and fiduciary intelligence platform with portfolio analysis, planning, tax optimization, and advisor workstation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
