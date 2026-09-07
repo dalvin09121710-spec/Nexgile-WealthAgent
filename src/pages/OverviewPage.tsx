@@ -288,7 +288,7 @@ export const OverviewPage: React.FC = () => {
                   domain={['dataMin - 100000', 'dataMax + 100000']}
                 />
                 <Tooltip
-                  formatter={(val: number) => [`$${val.toLocaleString()}`, 'Value']}
+                  formatter={(val: any) => [`$${Number(val || 0).toLocaleString()}`, 'Value']}
                   labelFormatter={label => `Period: ${label}`}
                   contentStyle={{
                     backgroundColor: '#0F172A',

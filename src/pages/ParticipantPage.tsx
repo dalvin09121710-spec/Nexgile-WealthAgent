@@ -129,7 +129,7 @@ export const ParticipantPage: React.FC = () => {
           </div>
           <div className="my-1.5">
             <div className="text-2xl font-extrabold text-emerald-400">
-              +${employerMatchAnnual.toLocaleString()} / yr
+              +${(employerMatchAnnual ?? 0).toLocaleString()} / yr
             </div>
             <span className="text-xs text-slate-400">Dollar-for-dollar match on first 5%</span>
           </div>

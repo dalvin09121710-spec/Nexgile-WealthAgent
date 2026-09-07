@@ -65,8 +65,10 @@ const AppLayout: React.FC = () => {
               <Route path="/goals-and-planning" element={<GoalsPage />} />
               <Route path="/tax-center" element={<TaxCenterPage />} />
               <Route path="/tax" element={<TaxCenterPage />} />
+              <Route path="/estate" element={<EstateGivingPage />} />
               <Route path="/estate-giving" element={<EstateGivingPage />} />
               <Route path="/estate-and-giving" element={<EstateGivingPage />} />
+              <Route path="/estate-planning" element={<EstateGivingPage />} />
               <Route path="/retirement-plans" element={<RetirementPlansPage />} />
               <Route path="/participant" element={<ParticipantPage />} />
               <Route path="/advisor-workstation" element={<AdvisorWorkstationPage />} />

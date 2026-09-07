@@ -125,7 +125,7 @@ export const RetirementPlansPage: React.FC = () => {
           </div>
           <div className="my-1.5">
             <div className="text-2xl font-extrabold text-white">
-              ${RETIREMENT_PLAN_SPONSOR.averageBalance.toLocaleString()}
+              ${(RETIREMENT_PLAN_SPONSOR.averageBalance ?? 0).toLocaleString()}
             </div>
             <span className="text-xs text-slate-400">Median balance: $64,200</span>
           </div>

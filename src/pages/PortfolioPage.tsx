@@ -327,7 +327,7 @@ export const PortfolioPage: React.FC = () => {
                   domain={['dataMin - 100000', 'dataMax + 100000']}
                 />
                 <Tooltip
-                  formatter={(val: number) => [`$${val.toLocaleString()}`, 'Value']}
+                  formatter={(val: any) => [`$${Number(val || 0).toLocaleString()}`, 'Value']}
                   contentStyle={{
                     backgroundColor: '#0f172a',
                     border: '1px solid rgba(255,255,255,0.15)',
@@ -660,16 +660,16 @@ export const PortfolioPage: React.FC = () => {
                       </div>
                     </td>
                     <td className="py-3 px-3 text-slate-400">{h.account}</td>
-                    <td className="py-3 px-3 text-right font-medium">{h.shares.toLocaleString()}</td>
+                    <td className="py-3 px-3 text-right font-medium">{(h.shares ?? 0).toLocaleString()}</td>
                     <td className="py-3 px-3 text-right font-bold text-white">
-                      ${h.marketValue.toLocaleString()}
+                      ${(h.marketValue ?? 0).toLocaleString()}
                     </td>
                     <td className="py-3 px-3 text-right text-slate-400 font-medium">
-                      ${h.costBasis.toLocaleString()}
+                      ${(h.costBasis ?? 0).toLocaleString()}
                     </td>
                     <td className="py-3 px-3 text-right">
                       <span className={`font-bold ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
-                        {isPositive ? '+' : ''}${h.gainLoss.toLocaleString()}
+                        {isPositive ? '+' : ''}${(h.gainLoss ?? 0).toLocaleString()}
                       </span>
                       <span className={`block text-[10px] ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
                         {isPositive ? '+' : ''}{h.gainLossPct}%
@@ -739,7 +739,7 @@ export const PortfolioPage: React.FC = () => {
               <div>
                 <span className="text-[10px] uppercase font-bold text-slate-400">Market Value</span>
                 <div className="font-bold text-white mt-0.5">
-                  ${selectedHolding.marketValue.toLocaleString()}
+                  ${(selectedHolding.marketValue ?? 0).toLocaleString()}
                 </div>
               </div>
               <div>
@@ -751,17 +751,17 @@ export const PortfolioPage: React.FC = () => {
               <div>
                 <span className="text-[10px] uppercase font-bold text-slate-400">Cost Basis</span>
                 <div className="font-bold text-white mt-0.5">
-                  ${selectedHolding.costBasis.toLocaleString()}
+                  ${(selectedHolding.costBasis ?? 0).toLocaleString()}
                 </div>
               </div>
               <div>
                 <span className="text-[10px] uppercase font-bold text-slate-400">Gain / Loss</span>
                 <div
                   className={`font-bold mt-0.5 ${
-                    selectedHolding.gainLoss >= 0 ? 'text-emerald-400' : 'text-rose-400'
+                    (selectedHolding.gainLoss ?? 0) >= 0 ? 'text-emerald-400' : 'text-rose-400'
                   }`}
                 >
-                  {selectedHolding.gainLoss >= 0 ? '+' : ''}${selectedHolding.gainLoss.toLocaleString()}
+                  {(selectedHolding.gainLoss ?? 0) >= 0 ? '+' : ''}${(selectedHolding.gainLoss ?? 0).toLocaleString()}
                 </div>
               </div>
             </div>
@@ -856,7 +856,7 @@ export const PortfolioPage: React.FC = () => {
                 <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex justify-between">
                   <span className="text-slate-400">Shares Held</span>
                   <span className="font-bold text-white">
-                    {selectedHolding.shares.toLocaleString()}
+                    {(selectedHolding.shares ?? 0).toLocaleString()}
                   </span>
                 </div>
               </div>

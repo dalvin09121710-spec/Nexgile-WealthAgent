@@ -279,7 +279,7 @@ export const TaxCenterPage: React.FC = () => {
                         <div className="text-[11px] text-slate-400 truncate max-w-[200px]">{item.name}</div>
                       </td>
                       <td className="py-3 px-3 text-right font-bold text-rose-400">
-                        -${Math.abs(item.unrealizedLoss).toLocaleString()}
+                        -${Math.abs(item.unrealizedLoss ?? 0).toLocaleString()}
                       </td>
                       <td className="py-3 px-3">
                         <div className="flex items-center gap-1.5 font-bold text-blue-400">
@@ -291,7 +291,7 @@ export const TaxCenterPage: React.FC = () => {
                         </div>
                       </td>
                       <td className="py-3 px-3 text-right font-bold text-emerald-400">
-                        +${item.potentialBenefit.toLocaleString()}
+                        +${(item.potentialBenefit ?? 0).toLocaleString()}
                       </td>
                       <td className="py-3 px-3 text-center">
                         <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold">
@@ -444,7 +444,7 @@ export const TaxCenterPage: React.FC = () => {
                         {w.lockExpiration}
                       </td>
                       <td className="py-3 px-3 text-right font-bold text-rose-400">
-                        -${w.lossAmount.toLocaleString()}
+                        -${(w.lossAmount ?? 0).toLocaleString()}
                       </td>
                       <td className="py-3 px-3 text-center">
                         <span

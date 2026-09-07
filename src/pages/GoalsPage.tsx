@@ -319,7 +319,7 @@ export const GoalsPage: React.FC = () => {
                 <div className="flex justify-between">
                   <span className="text-slate-400">Monthly Inflow:</span>
                   <span className="font-bold text-slate-200">
-                    ${goal.monthlyContribution.toLocaleString()} / mo
+                    ${(goal.monthlyContribution ?? 0).toLocaleString()} / mo
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -384,7 +384,7 @@ export const GoalsPage: React.FC = () => {
                   tickFormatter={val => `$${(val / 1000000).toFixed(1)}M`}
                 />
                 <Tooltip
-                  formatter={(val: number) => [`$${val.toLocaleString()}`, 'Capital']}
+                  formatter={(val: any) => [`$${Number(val || 0).toLocaleString()}`, 'Capital']}
                   contentStyle={{
                     backgroundColor: 'rgba(15, 23, 42, 0.9)',
                     backdropFilter: 'blur(8px)',
@@ -492,7 +492,7 @@ export const GoalsPage: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex justify-between text-xs font-medium">
                   <label className="text-slate-300">Monthly Contribution</label>
-                  <span className="font-bold text-blue-400">${monthlyContribution.toLocaleString()} / mo</span>
+                  <span className="font-bold text-blue-400">${(monthlyContribution ?? 0).toLocaleString()} / mo</span>
                 </div>
                 <input
                   type="range"
@@ -567,7 +567,7 @@ export const GoalsPage: React.FC = () => {
                 <div>
                   <span className="text-slate-400 text-[10px] uppercase">Est. Monthly Draw</span>
                   <div className="font-bold text-slate-200 mt-0.5">
-                    ${monthlyDraw.toLocaleString()} / mo
+                    ${(monthlyDraw ?? 0).toLocaleString()} / mo
                   </div>
                 </div>
                 <div>

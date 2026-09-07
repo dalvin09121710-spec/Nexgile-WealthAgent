@@ -18,7 +18,7 @@ export const TaxLossHarvestDrawer: React.FC = () => {
       setHarvestDrawerItem(null);
       addToast(
         'Tax-Loss Harvesting Order Executed',
-        `Sold ${ticker} to harvest loss; immediately purchased proxy ${proxy} to preserve market beta. Estimated tax benefit: +$${benefit.toLocaleString()}.`,
+        `Sold ${ticker} to harvest loss; immediately purchased proxy ${proxy} to preserve market beta. Estimated tax benefit: +$${(benefit ?? 0).toLocaleString()}.`,
         'success'
       );
     }, 1200);
@@ -69,7 +69,7 @@ export const TaxLossHarvestDrawer: React.FC = () => {
               </div>
               <div className="text-right">
                 <div className="font-extrabold text-base text-rose-400">
-                  -${Math.abs(harvestDrawerItem.unrealizedLoss).toLocaleString()}
+                  -${Math.abs(harvestDrawerItem.unrealizedLoss ?? 0).toLocaleString()}
                 </div>
                 <div className="text-[11px] text-slate-400">Unrealized Capital Loss</div>
               </div>
@@ -110,7 +110,7 @@ export const TaxLossHarvestDrawer: React.FC = () => {
               <div className="py-2 flex justify-between">
                 <span className="text-slate-400">Estimated Tax Benefit</span>
                 <span className="font-bold text-blue-400">
-                  +${harvestDrawerItem.potentialBenefit.toLocaleString()}
+                  +${(harvestDrawerItem.potentialBenefit ?? 0).toLocaleString()}
                 </span>
               </div>
               <div className="py-2 flex justify-between">

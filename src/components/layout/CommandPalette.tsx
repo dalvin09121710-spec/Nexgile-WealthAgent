@@ -180,7 +180,7 @@ export const CommandPalette: React.FC = () => {
     ...HOLDINGS_LIST.map(h => ({
       id: `holding-${h.ticker}`,
       title: `${h.ticker} - ${h.name}`,
-      subtitle: `${h.account} • $${h.marketValue.toLocaleString()} (${h.allocationPct}%) • Gain: +$${h.gainLoss.toLocaleString()}`,
+      subtitle: `${h.account} • $${(h.marketValue ?? 0).toLocaleString()} (${h.allocationPct}%) • Gain: +$${(h.gainLoss ?? 0).toLocaleString()}`,
       category: 'Holding' as const,
       icon: PieChart,
       action: () => {

@@ -56,9 +56,26 @@ export const Sidebar: React.FC = () => {
   const renderNavLinks = (items: NavItem[]) => {
     return items.map(item => {
       const Icon = item.icon;
+      const isEstate = item.path === '/estate-and-giving' && (
+        location.pathname === '/estate-and-giving' ||
+        location.pathname === '/estate-giving' ||
+        location.pathname === '/estate' ||
+        location.pathname.startsWith('/estate')
+      );
+      const isGoals = item.path === '/goals-and-planning' && (
+        location.pathname === '/goals-and-planning' ||
+        location.pathname === '/goals' ||
+        location.pathname.startsWith('/goals')
+      );
+      const isTax = item.path === '/tax-center' && (
+        location.pathname === '/tax-center' ||
+        location.pathname === '/tax' ||
+        location.pathname.startsWith('/tax')
+      );
+
       const isActive = item.path === '/' 
         ? location.pathname === '/' || location.pathname === '/overview'
-        : location.pathname.startsWith(item.path);
+        : (isEstate || isGoals || isTax || location.pathname.startsWith(item.path));
 
       return (
         <NavLink

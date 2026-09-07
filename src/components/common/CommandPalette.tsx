@@ -85,7 +85,7 @@ export const CommandPalette: React.FC = () => {
       title: 'Go to Estate & Charitable Giving',
       category: 'Navigation',
       icon: HeartHandshake,
-      action: () => navigate('/estate-giving')
+      action: () => navigate('/estate-and-giving')
     },
     {
       id: 'nav-retirement',

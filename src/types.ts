@@ -101,8 +101,8 @@ export interface Beneficiary {
   account?: string;
   allocation?: string;
   allocationPct?: number;
-  primaryBeneficiary?: boolean;
-  contingent?: boolean;
+  primaryBeneficiary?: boolean | string;
+  contingent?: boolean | string;
   lastVerified?: string;
   status?: string;
   verified?: boolean;
